@@ -22,6 +22,8 @@ const Index = () => {
           plantUML += "}\n";
           currentSubroutine = null;
         }
+      } else if (line.startsWith("C") || line.startsWith("c") || line.startsWith("!")) {
+        plantUML += `  ' ${line.substring(1).trim()}\n`;
       } else if (currentSubroutine) {
         plantUML += `  ${line}\n`;
       }
